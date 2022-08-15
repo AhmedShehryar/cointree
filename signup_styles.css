@@ -1,0 +1,90 @@
+body{
+	background-image: linear-gradient(90deg, #fdfbfb 0%, #ebedee 100%)
+}
+
+a{
+	text-decoration: none;
+	font-family: sans-serif;
+	color: turquoise;
+}
+
+a:hover{
+	color: rgb(11,245,100);
+}
+
+#h_top{	
+	font-family: sans-serif;
+	margin-bottom: 15px;
+	font-size: 50px;
+}
+
+#h_last{
+	font-family: sans-serif;
+	margin-top: 50px;
+	font-size: 15px;
+}
+
+#parent_div{
+	height: 73.8vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#main_container{
+	width: 350px;
+	height: 500px;
+	margin-top: 150px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.center{
+	display: flex;
+	justify-content: center;
+}
+
+.input{
+	background: transparent;
+	font-size: 20px;
+	width: 250px;
+	margin-top: 55px;
+	padding: 12px;
+	border-top: transparent;
+	border-left: transparent;
+	border-right: transparent;
+	border-bottom: solid turquoise 2px;
+}
+
+.input:focus{
+	outline: none;
+	border-bottom-color: rgb(11,245,100);
+	animation: bigsmall linear .1s;
+}
+
+@keyframes bigsmall{
+	from{width: 250px;}
+	to{width: 260px;}
+}
+
+
+#submit_btn{
+	font-size: 20px;
+	color: white;
+	padding: 12px 15px 12px 15px;
+	background: solid;
+	background-image: linear-gradient(90deg, #86f1fe 0%, turquoise 100%);
+	border: transparent;
+	border-radius: 20px;
+	margin-top: 80px;
+	margin-left: 175px;
+}
+#submit_btn:hover{
+	cursor: pointer;
+	background-image: none;
+	background-color: rgba(11,245,100,0.6);
+}
+#submit_btn:active{
+	background-color: rgba(11,245,100,0.4);
+}

@@ -1,0 +1,186 @@
+:root {
+	--primColor: transparent;
+	--secoColor: #555555;
+    --cornerRad: 4px;
+  	--triColor: #3d3d3d;
+  	--ic: #212121;
+}
+
+body{
+
+	background-image: linear-gradient(90deg, #fdfbfb 0%, #e7d9ce 100%);
+	font-family: Arial, Helvetica, sans-serif;
+  	font-size: 20px;
+}
+
+details {
+	width: 125px;
+  margin-top: 40px;
+}
+summary {
+  writing-mode: vertical-lr;
+  text-align: center;
+  padding: 12px 10px;
+  width: 23px;
+  height: 17px;
+  background-color: var(--primColor);
+  border: 2px solid var(--secoColor);
+  border-radius: var(--cornerRad);
+  color: var(--secoColor);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: transform 200ms ease-in-out 0s;
+}
+summary::before,
+summary::after {
+  position: static;
+  top: 0;
+  left: 0;
+}
+summary::before {
+  content: "";
+}
+summary::after {
+  content: "III";
+  letter-spacing: -1px;
+  color: var(--ic);
+}
+summary:hover {
+  transform: scale(1.1);
+  border: 2px solid black;
+}
+summary::marker {
+  font-size: 0;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .menu {
+  animation-name: menuAnim;
+}
+details[open] summary::before {
+  content: "X";
+}
+details[open] summary::after {
+  content: "";
+}
+.menu {
+  height: 0;
+  width: fit-content;
+  border-radius: var(--cornerRad);
+  background-color: var(--primColor);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  animation: closeMenu 300ms ease-in-out forwards;
+}
+.menu a {
+  padding: 12px 24px;
+  margin: 0 16px;
+  color: var(--ic);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;
+  transition: filter 200ms linear 0s;
+}
+.menu a:nth-of-type(1) {
+  padding-top: 24px;
+}
+.menu a:nth-last-of-type(1) {
+  border-bottom: none;
+}
+.menu a:hover {
+	text-shadow: grey 50px 50px 5px 5px;
+  animation: big 300ms ease-in-out forwards;
+}
+details::before {
+  content: "MENU";
+  color: black;
+  position: absolute;
+  margin-left: 45px;
+  padding: 13px 10px;
+}
+details[open]::before {
+  animation: fadeMe 90ms linear forwards;
+}
+
+@keyframes big{
+	to{transform: scale(1.4)}
+}
+
+@keyframes menuAnim {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 312px;
+  }
+}
+@keyframes fadeMe {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.parent_nav{
+	display: grid;
+	column-gap: 0px;
+	grid-template-columns: auto auto 110px 80px;
+	margin: 40px;
+}
+
+#logo{
+	margin-left: 6.2vw;
+	grid-template-columns: 2/3;
+}
+
+#bal{
+	font-size: 25px;
+	margin-top: 40px;
+	right: 0;
+	padding: 10px;
+}
+#numbal:before{
+	content: '\0024';
+}
+#numbal{
+	font-size: 25px;
+	margin-top: 40px;
+	padding: 10px;
+
+}
+
+.submit_btn{
+	font-size: 60px;
+	padding: 40px 40px 40px 40px;
+	color: white;
+	background-image: linear-gradient(90deg, #86f1fe 0%, turquoise 100%);
+	border: transparent;
+	border-radius: 20px;
+}
+.submit_btn:hover{
+	cursor: pointer;
+	background-image: none;
+	background-color: rgba(11,245,100,0.6);
+}
+.submit_btn:active{
+	background-color: rgba(11,245,100,0.4);
+}
+
+#option_parent{
+	margin-top: 20vh;
+	width: 90vw;
+	margin-left: 5vw;
+	margin-right: 5vw;
+	display: grid;
+	grid-gap: 40px;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+}
